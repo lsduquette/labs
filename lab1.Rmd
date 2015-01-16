@@ -1,0 +1,126 @@
+---
+title: "Intro to R"
+author: "jeremy"
+date: "Friday, January 16, 2015"
+output: html_document
+---
+
+Welcome to the first R lab!
+
+R is a program that has been growing in popularity since its inception at University of Auckland in 1993.
+
+It is a programming language in its own right, but widely used as a stats program by researchers.
+
+R has become a strong tool in reproducible research - much of scientific computing is carried out by self taught programmers, and as such was often terrible quality and hard to run if you didnt write it. Think of the changes you make to an excel spreadsheet - you can describe them, but for someone trying to reproduce your steps somewhere else, it can be vary hit or miss. Now think of code someone else wrote based on their exact computer, program versions and manual file changes. Not easy!
+
+This is where R comes in. We can go from raw data to final plots in the program, and make it repeatable by simple copy paste. We can also share code as "packages" to allow other people acess to useful functions.
+
+One of R's greatest virtues is that it is free and open source. You don't have to pay for an expensive license, and anyone can see and modify the code.
+
+This document was written in knitr - a way of making a shareable, repeatable document with embedded code. This is a markdown language (some of you may be familiar with Latex)
+
+Normal instructions, etc are written in this type face
+
+```{r}
+#r input is written like this
+```
+
+```{r echo=FALSE}
+print("r output is like this")
+```
+
+In this lab, we are going to familiarise ourselves with some of R's basic syntax, and do a couple of basic plots
+
+(im going to need to paste in some screenshots of rstudio)
+
+First, let's do a little math
+
+```{r eval=FALSE}
+9*3
+```
+
+We can do a lot more
+
+```{r eval=FALSE}
+(9*3)+log(sqrt(pi))*integrate(dnorm, -1.96, 1.96)[[1]]
+```
+
+as it is a programming language, we can assign results to an object using the `<-` operator. The left side is now "assigned" to be the output of the rightside
+
+```{r eval=FALSE}
+secondsperminute<-60
+minutesperhour<-60
+hoursperday<-24
+secondsperday<-secondsperminute*minutesperhour*hoursperday
+secondsperday
+```
+
+The variables assigned to objects can be nearly anything - a discussion of different of R data types is too much for today, but have a look below and see if you can figure out what is going on:
+
+```{r eval=FALSE}
+x<-9
+a<-c(1,2,3,4,5,6,7)
+x*a
+(z<-data.frame(1, 1:10, sample(c("a","b","d"), 10, replace = TRUE)))
+(y<-"a big red dog")
+(b<-as.matrix(1:10))
+```
+
+R depends heavily on functions. We use functions to give us interesting outputs based on our inputs
+functions normally look like function(x,y,z) where the x,y and z are arguments to the functions. The arguments can be numbers, lists, variables - nearly anything. Function outputs can be stored to objects, and objects can be function inputs
+
+
+```{r eval=FALSE}
+(z<-runif(1))
+log(z)
+plot(cars)
+```
+
+There are a lot of functions included in R. If you don't know how to use one, type in ?function
+
+```{r eval=FALSE}
+?runif
+?exp
+?plot
+```
+
+A lot of this help file won't make sense for now, but we can see it is a start on getting help. If you forget a function name or inputs in RStudio, you can hit Tab, and you will get hints of what to continue onto.
+
+(pics!)
+
+We can also defone our own functions, if we find we are doing the same long calculation multiple times. Here's a simple example:
+
+```{r}
+sumtwo<-function(a,b){
+  a+b
+}
+```
+
+now we can call it:
+
+```{r,eval=FALSE}
+(a<-sumtwo(1,3))
+(b<-sumtwo(100,500))
+sumtwo(a,b)
+```
+
+Built in functions will often look like our simple example above, only more complicated based on their task. 
+
+Now that we know (a little) about functions and variables, let's read our data in!
+(stuff here about csv, open in notepad, excel etc)
+
+```{r eval=FALSE}
+read.csv("file")
+```
+
+so we printed it, but lets assign it to a variable so we can access it:
+
+```{r eval=FALSE}
+soildata<-read.csv("file")
+```
+
+explain .csv
+summarise dataset
+then boxplot??
+
+swirl test???
