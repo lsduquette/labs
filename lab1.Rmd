@@ -11,11 +11,13 @@ R is a program that has been growing in popularity since its inception at Univer
 
 It is a programming language in its own right, but widely used as a stats program by researchers.
 
-R has become a strong tool in reproducible research - much of scientific computing is carried out by self taught programmers, and as such was often terrible quality and hard to run if you didnt write it. Think of the changes you make to an excel spreadsheet - you can describe them, but for someone trying to reproduce your steps somewhere else, it can be vary hit or miss. Now think of code someone else wrote based on their exact computer, program versions and manual file changes. Not easy!
+R has become a strong tool in reproducible research - much of scientific computing is carried out by self taught programmers, and as such was often terrible quality and hard to run if you didnt write it. Think of the changes you make to an excel spreadsheet - you can describe them, but for someone trying to reproduce your steps somewhere else, it can be very hit or miss. Now think of code someone else wrote based on their exact computer, program versions and manual file changes. Not easy!
 
 This is where R comes in. We can go from raw data to final plots in the program, and make it repeatable by simple copy paste. We can also share code as "packages" to allow other people acess to useful functions.
 
 One of R's greatest virtues is that it is free and open source. You don't have to pay for an expensive license, and anyone can see and modify the code.
+
+We are going to use RStudio - a nicer UI to R (technically an IDE). This is also free!
 
 This document was written in knitr - a way of making a shareable, repeatable document with embedded code. This is a markdown language (some of you may be familiar with Latex)
 
@@ -29,9 +31,15 @@ Normal instructions, etc are written in this type face
 print("r output is like this")
 ```
 
-In this lab, we are going to familiarise ourselves with some of R's basic syntax, and do a couple of basic plots
+In this lab, we are going to familiarise ourselves with some of R's basic syntax, load in our data, and do a couple of basic plots.
 
-(im going to need to paste in some screenshots of rstudio)
+First, let's open Rstudio. It is in under start>statistics apps>Rstudio
+
+It should look a little like this:
+
+![](screenshot1.jpg)
+
+Type/paste the commands into the console.
 
 First, let's do a little math
 
@@ -66,9 +74,11 @@ x*a
 (b<-as.matrix(1:10))
 ```
 
-R depends heavily on functions. We use functions to give us interesting outputs based on our inputs
+R depends heavily on functions. We use functions to give us interesting outputs based on our inputs.
+
 functions normally look like function(x,y,z) where the x,y and z are arguments to the functions. The arguments can be numbers, lists, variables - nearly anything. Function outputs can be stored to objects, and objects can be function inputs
 
+Try the below commands:
 
 ```{r eval=FALSE}
 (z<-runif(1))
@@ -86,9 +96,13 @@ There are a lot of functions included in R. If you don't know how to use one, ty
 
 A lot of this help file won't make sense for now, but we can see it is a start on getting help. If you forget a function name or inputs in RStudio, you can hit Tab, and you will get hints of what to continue onto.
 
-(pics!)
+try typing plo, then hitting tab:
 
-We can also defone our own functions, if we find we are doing the same long calculation multiple times. Here's a simple example:
+![](screenshot2.jpg)
+
+You will get a list of everything you can do that starts with plo... There is a lot!
+
+We can also define our own functions, if we find we are doing the same long calculation multiple times. Here's a (very) simple example:
 
 ```{r}
 sumtwo<-function(a,b){
@@ -107,20 +121,115 @@ sumtwo(a,b)
 Built in functions will often look like our simple example above, only more complicated based on their task. 
 
 Now that we know (a little) about functions and variables, let's read our data in!
-(stuff here about csv, open in notepad, excel etc)
+First, let's download our data from blackboard.
+
+It is called "height data2015.xlsx" in the lab assignments folder.
+
+Download it to your downloads folder, and open it up in excel:
+
+![](screenshot3.jpg)
+
+We want to change the format! .xslx is a propritry excel format - data should be free!
+
+let's save it as a .csv, and remove the sapce in the filename:
+
+![](screenshot4.jpg)
+
+click yes - we don't care about losing excel specific formatting
+
+Close excel! Now we can open our file with whatever we want. Let's try a text editor:
+
+![](screenshot5.jpg)
+
+
+We can see it is a simple text representation of our data with commas seperating the values and line breaks the rows. .csv stands for comma separated values.
+
+Now we need to make sure R can open it up.
+First let's check where we are in R:
 
 ```{r eval=FALSE}
-read.csv("file")
+getwd()
 ```
 
-so we printed it, but lets assign it to a variable so we can access it:
+This should give you "\\\\roger/YOURUSERNAME/My Documents".
+If not, please see a TA!
+
+Lets change our working directory to our downloads folder
 
 ```{r eval=FALSE}
-soildata<-read.csv("file")
+setwd("downloads")
+dir()
 ```
 
-explain .csv
-summarise dataset
-then boxplot??
+```{r eval=FALSE}
+read.csv("heightdata2015.csv")
+```
 
-swirl test???
+so we printed it out, but lets assign it to a variable so we can access it:
+
+```{r eval=FALSE}
+soildata<-read.csv("heightdata2015.csv")
+```
+
+What can we do now? Let's see what the data looks like (aka exploratory analysis)
+
+```{r eval=FALSE}
+head(soildata)
+tail(soildata)
+soildata$Height
+mean(soildata$Height)
+str(soildata)
+```
+
+The head and tail commands give us the first (or last) 6 rows of our data. The $ operator takes all the values from the named column, which we can then go on to mean.
+
+The str function tells us what type our data is: a dataframe, with three factors (ie categorical variables), and a numeric column (our response variable). If you continue on in R you will leanr what this all means, and how to change it.
+
+We can subset our data. The $ sign gives us a column. We can filter, by using the == and bracket subsetting
+
+
+```{r eval=FALSE}
+soildata$Height
+soildata$section=="Tues_am"
+soildata[soildata$section=="Tues_am",]
+```
+
+The last command uses the large TRUE/FALSE vector to subset our dataframe. The brackets[] take a subset of something, and the follwing comma tells R we want to take rows.
+
+If you are still confused, try this:
+
+```{r eval=FALSE}
+soildata[1,1]
+soildata[1,2]
+soildata[1,3]
+soildata[1,4]
+soildata[1,]
+soildata[,1]
+```
+
+Try pulling our your groups data! (hint: groups are stored in the soildata$group column and need to be surrounded by "")
+
+We can plot our data. R has some very nice built in graphing capabilities:
+
+```{r eval=FALSE}
+plot(soildata$Height~soildata$Treatment)
+plot(soildata$Height~soildata$group)
+plot(soildata$Height~soildata$section)
+```
+
+The nomenclature here tells R we are plotting soildata$Height as a repsonse (~) of the Treatment, group or section. 
+
+The last thing you need to do is plot your own data as a respsone of treatments.
+First, subset the data to only your own group:
+
+```{r eval=FALSE}
+mydata<-soildata[soildata$group=="YOUR GROUP",]
+```
+
+Now, lets plot it! You should be able to figure out how to do this based on the included code, but please ask if you are having troubles.
+
+Before you go, make sure a TA sees your final plot and marks you off!
+
+
+
+R and R studio are free and open source software. For instructions on installing on your personal computer, please see: http://cran.rstudio.com/ and http://www.rstudio.com/products/rstudio/download/
