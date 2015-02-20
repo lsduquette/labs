@@ -1,9 +1,11 @@
 ---
-title: "Intro to R"
-author: "jeremy"
-date: "Friday, January 16, 2015"
+title: "Lab 4: Intro to R"
+author: "Jeremy Gray"
 output: html_document
 ---
+
+4.1 Intro
+========================================================
 
 Welcome to the first R lab!
 
@@ -17,11 +19,17 @@ This is where R comes in. We can go from raw data to final plots in the program,
 
 One of R's greatest virtues is that it is free and open source. You don't have to pay for an expensive license, and anyone can see and modify the code.
 
+Every course you take in the EEB department now has the goal of using R. It is also heavily used by researchers in the department (Jeremy spends ~50% of his time working in R). R is used by companies as diverse as Google, Ebay, Amgen, Genentech and Fivethirtyeight.com.
+
 We are going to use RStudio - a nicer UI to R (technically an IDE). This is also free!
 
 This document was written in knitr - a way of making a shareable, repeatable document with embedded code. This is a markdown language (some of you may be familiar with Latex)
 
-Normal instructions, etc are written in this type face
+
+4.2 Instructions
+========================================================
+
+Normal instructions, etc are written in the below type face. You should type these into the command prompt
 
 ```{r}
 #r input is written like this
@@ -41,19 +49,29 @@ It should look a little like this:
 
 Type/paste the commands into the console.
 
+
+4.3 Basic Calculations and Operations
+========================================================
+
 First, let's do a little math
 
 ```{r eval=FALSE}
 9*3
 ```
 
-We can do a lot more
+It will work like a calculator.
+
+We can do a lot more:
 
 ```{r eval=FALSE}
 (9*3)+log(sqrt(pi))*integrate(dnorm, -1.96, 1.96)[[1]]
 ```
 
-as it is a programming language, we can assign results to an object using the `<-` operator. The left side is now "assigned" to be the output of the rightside
+Multiple lines are to be input line by line. The program knows when to end and start new lines based on bracketing.
+
+As it is a programming language, we can assign results to an object using the `<-` operator. The left side is now "assigned" to be the output of the rightside
+
+Watch the Environment pane as you enter the below in line by line:
 
 ```{r eval=FALSE}
 secondsperminute<-60
@@ -74,35 +92,26 @@ x*a
 (b<-as.matrix(1:10))
 ```
 
+4.4 R as a functional language
+========================================================
+
 R depends heavily on functions. We use functions to give us interesting outputs based on our inputs.
 
 functions normally look like function(x,y,z) where the x,y and z are arguments to the functions. The arguments can be numbers, lists, variables - nearly anything. Function outputs can be stored to objects, and objects can be function inputs
 
-Try the below commands:
+Try the below commands (one by one):
 
 ```{r eval=FALSE}
+a=c(1,2,3,4,5)
+mean(a)
+sd(a)
 (z<-runif(1))
 log(z)
 plot(cars)
 ```
 
-There are a lot of functions included in R. If you don't know how to use one, type in ?function
 
-```{r eval=FALSE}
-?runif
-?exp
-?plot
-```
-
-A lot of this help file won't make sense for now, but we can see it is a start on getting help. If you forget a function name or inputs in RStudio, you can hit Tab, and you will get hints of what to continue onto.
-
-try typing plo, then hitting tab:
-
-![](screenshot2.jpg)
-
-You will get a list of everything you can do that starts with plo... There is a lot!
-
-We can also define our own functions, if we find we are doing the same long calculation multiple times. Here's a (very) simple example:
+We can also define our own functions, if we find we are doing the same long calculation multiple times. Here's a (very) simple example (note, this is not line by line, as R waits for the closing braces):
 
 ```{r}
 sumtwo<-function(a,b){
@@ -120,6 +129,33 @@ sumtwo(a,b)
 
 Built in functions will often look like our simple example above, only more complicated based on their task. 
 
+
+4.5 Help
+========================================================
+
+There are a lot of functions included in R. If you don't know how to use one, type in ?function
+
+```{r eval=FALSE}
+?runif
+?exp
+?plot
+```
+
+A lot of this help file won't make sense for now, but we can see it is a start on getting help. If you are stuck, opening the help page for the function and reading it (RTM) is a good first step. 
+
+If you forget a function name or inputs in RStudio, you can hit Tab, and you will get hints of what to continue onto.
+
+try typing plo, then hitting tab:
+
+![](screenshot2.jpg)
+
+You will get a list of everything you can do that starts with plo... There is a lot!
+
+
+
+4.6 Inputting Data
+========================================================
+
 Now that we know (a little) about functions and variables, let's read our data in!
 First, let's download our data from blackboard.
 
@@ -131,7 +167,7 @@ Download it to your downloads folder, and open it up in excel:
 
 We want to change the format! .xslx is a propritry excel format - data should be free!
 
-let's save it as a .csv, and remove the sapce in the filename:
+let's save it as a .csv, and remove the space in the filename:
 
 ![](screenshot4.jpg)
 
@@ -171,6 +207,10 @@ so we printed it out, but lets assign it to a variable so we can access it:
 soildata<-read.csv("heightdata2015.csv")
 ```
 
+
+4.7 Exploratory Analysis
+========================================================
+
 What can we do now? Let's see what the data looks like (aka exploratory analysis)
 
 ```{r eval=FALSE}
@@ -183,31 +223,38 @@ str(soildata)
 
 The head and tail commands give us the first (or last) 6 rows of our data. The $ operator takes all the values from the named column, which we can then go on to mean.
 
-The str function tells us what type our data is: a dataframe, with three factors (ie categorical variables), and a numeric column (our response variable). If you continue on in R you will leanr what this all means, and how to change it.
+The str function tells us what type our data is: a dataframe, with three factors (ie categorical variables), and a numeric column (our continuous response variable). If you continue on in R you will learn what this all means, and how to change it.
 
-We can subset our data. The $ sign gives us a column. We can filter, by using the == and bracket subsetting
+Recall our schema - what tests would be sensible to run on this data?
+![](schema.jpg)
+
+
+4.8 Subsetting Data
+========================================================
+
+We can subset our data. The $ sign gives us a column. We can filter, by using a function with the  == operator or bracket subsetting
 
 
 ```{r eval=FALSE}
 soildata$Height
 soildata$section=="Tues_am"
+subset(soildata,section=="Tues_am")
 soildata[soildata$section=="Tues_am",]
 ```
 
-The last command uses the large TRUE/FALSE vector to subset our dataframe. The brackets[] take a subset of something, and the follwing comma tells R we want to take rows.
+The subset function uses the large TRUE/FALSE vector to subset our dataframe.
 
-If you are still confused, try this:
+If you are still confused, try these:
 
 ```{r eval=FALSE}
-soildata[1,1]
-soildata[1,2]
-soildata[1,3]
-soildata[1,4]
-soildata[1,]
-soildata[,1]
+subset(soildata,Treatment=="WC/FC")
+subset(soildata,Height>10.0)
 ```
 
 Try pulling our your groups data! (hint: groups are stored in the soildata$group column and need to be surrounded by "")
+
+4.9 Plotting Data
+========================================================
 
 We can plot our data. R has some very nice built in graphing capabilities:
 
@@ -219,14 +266,17 @@ plot(soildata$Height~soildata$section)
 
 The nomenclature here tells R we are plotting soildata$Height as a repsonse (~) of the Treatment, group or section. 
 
-The last thing you need to do is plot your own data as a respsone of treatments.
+4.10 Assessment
+========================================================
+
+The last thing you need to do is plot your own data as a response of treatments.
 First, subset the data to only your own group:
 
 ```{r eval=FALSE}
 mydata<-soildata[soildata$group=="YOUR GROUP",]
 ```
 
-Now, lets plot it! You should be able to figure out how to do this based on the included code, but please ask if you are having troubles.
+Now, lets plot it! You should be able to figure out how to do this based on the previous code, but please ask if you are having troubles.
 
 Before you go, make sure a TA sees your final plot and marks you off!
 
