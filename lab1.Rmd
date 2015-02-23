@@ -13,9 +13,9 @@ R is a program that has been growing in popularity since its inception at Univer
 
 It is a programming language in its own right, but widely used as a stats program by researchers.
 
-R has become a strong tool in reproducible research - much of scientific computing is carried out by self taught programmers, and as such was often terrible quality and hard to run if you didnt write it. Think of the changes you make to an excel spreadsheet - you can describe them, but for someone trying to reproduce your steps somewhere else, it can be very hit or miss. Now think of code someone else wrote based on their exact computer, program versions and manual file changes. Not easy!
+R has become a strong tool in reproducible research - much of scientific computing is carried out by self-taught programmers, and as such was often terrible quality and hard to run if you didn't write it. Think of the changes you make to an excel spreadsheet - you can describe them, but for someone trying to reproduce your steps somewhere else, it can be very hit or miss. Now think of code someone else wrote based on their exact computer, program versions and manual file changes. Not easy!
 
-This is where R comes in. We can go from raw data to final plots in the program, and make it repeatable by simple copy paste. We can also share code as "packages" to allow other people acess to useful functions.
+This is where R comes in. We can go from raw data to final plots in the program, and make it repeatable by simple copy paste. We can also share code as "packages" to allow other people access to useful functions.
 
 One of R's greatest virtues is that it is free and open source. You don't have to pay for an expensive license, and anyone can see and modify the code.
 
@@ -165,7 +165,7 @@ Download it to your downloads folder, and open it up in excel:
 
 ![](screenshot3.jpg)
 
-We want to change the format! .xslx is a propritry excel format - data should be free!
+We want to change the format! .xslx is a proprietary excel format - data should be free!
 
 let's save it as a .csv, and remove the space in the filename:
 
@@ -178,7 +178,7 @@ Close excel! Now we can open our file with whatever we want. Let's try a text ed
 ![](screenshot5.jpg)
 
 
-We can see it is a simple text representation of our data with commas seperating the values and line breaks the rows. .csv stands for comma separated values.
+We can see it is a simple text representation of our data with commas separating the values and line breaks the rows. .csv stands for comma separated values.
 
 Now we need to make sure R can open it up.
 First let's check where we are in R:
@@ -190,7 +190,7 @@ getwd()
 This should give you "\\\\roger/YOURUSERNAME/My Documents".
 If not, please see a TA!
 
-Lets change our working directory to our downloads folder
+Let's change our working directory to our downloads folder
 
 ```{r eval=FALSE}
 setwd("downloads")
@@ -201,7 +201,7 @@ dir()
 read.csv("heightdata2015.csv")
 ```
 
-so we printed it out, but lets assign it to a variable so we can access it:
+so we printed it out, but let's assign it to a variable so we can access it:
 
 ```{r eval=FALSE}
 soildata<-read.csv("heightdata2015.csv")
@@ -264,7 +264,7 @@ plot(soildata$Height~soildata$group)
 plot(soildata$Height~soildata$section)
 ```
 
-The nomenclature here tells R we are plotting soildata$Height as a repsonse (~) of the Treatment, group or section. 
+The nomenclature here tells R we are plotting soildata$Height as a response (~) of the Treatment, group or section. 
 
 4.10 Assessment
 ========================================================
@@ -276,7 +276,7 @@ First, subset the data to only your own group:
 mydata<-subset(soildata,group=="YOUR GROUP")
 ```
 
-Now, lets plot it! You should be able to figure out how to do this based on the previous code, but please ask if you are having troubles.
+Now, let's plot it! You should be able to figure out how to do this based on the previous code, but please ask if you are having troubles.
 
 Before you go, make sure a TA sees your final plot and marks you off!
 
