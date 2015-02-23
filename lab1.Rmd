@@ -273,7 +273,7 @@ The last thing you need to do is plot your own data as a response of treatments.
 First, subset the data to only your own group:
 
 ```{r eval=FALSE}
-mydata<-soildata[soildata$group=="YOUR GROUP",]
+mydata<-subset(soildata,group=="YOUR GROUP")
 ```
 
 Now, lets plot it! You should be able to figure out how to do this based on the previous code, but please ask if you are having troubles.
