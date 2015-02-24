@@ -47,7 +47,7 @@ It should look a little like this:
 
 ![](screenshot1.jpg)
 
-Type/paste the commands into the console.
+Type/paste the commands into the console. If you mess up and want to redo a command, just hit the up arrow on the keyboard to go back through history.
 
 
 4.3 Basic Calculations and Operations
@@ -88,9 +88,13 @@ x<-9
 a<-c(1,2,3,4,5,6,7)
 x*a
 (z<-data.frame(1, 1:10, sample(c("a","b","d"), 10, replace = TRUE)))
+(names(z)<-c("onenumber","range","samples"))
+z
 (y<-"a big red dog")
 (b<-as.matrix(1:10))
 ```
+
+z is a dataframe - how we will store data. We can imagine a dataframe in R as a large spreadsheet, with each observation on a row, and each variable type as a column. Data frames are one of Rs best features - but there are many other ways of representing data as well.
 
 4.4 R as a functional language
 ========================================================
@@ -142,6 +146,8 @@ There are a lot of functions included in R. If you don't know how to use one, ty
 ```
 
 A lot of this help file won't make sense for now, but we can see it is a start on getting help. If you are stuck, opening the help page for the function and reading it (RTM) is a good first step. 
+
+For some of the functions in the chunks above, try out opening their help (eg type ?sample) and having a quick browse
 
 If you forget a function name or inputs in RStudio, you can hit Tab, and you will get hints of what to continue onto.
 
@@ -264,7 +270,7 @@ plot(soildata$Height~soildata$group)
 plot(soildata$Height~soildata$section)
 ```
 
-The nomenclature here tells R we are plotting soildata$Height as a response (~) of the Treatment, group or section. 
+The nomenclature here tells R we are plotting soildata$Height as a response (~) of the soildata$Treatment, soildata$group or soildata$section. 
 
 4.10 Assessment
 ========================================================
@@ -276,10 +282,14 @@ First, subset the data to only your own group:
 mydata<-subset(soildata,group=="YOUR GROUP")
 ```
 
-Now, let's plot it! You should be able to figure out how to do this based on the previous code, but please ask if you are having troubles.
+Now, let's plot it! You should be able to figure out how to do this based on the previous code, but please ask if you are having troubles. Think carefully about the two variables you are plotting, and where they come from.
 
 Before you go, make sure a TA sees your final plot and marks you off!
 
+If you want to save your commands, got the history panel in the top right, and hit the save button. You can also save your entire environment in the same way. You can also enter the below command:
 
+```{r eval=FALSE}
+savehistory("history.txt")
+```
 
 R and R studio are free and open source software. For instructions on installing on your personal computer, please see: http://cran.rstudio.com/ and http://www.rstudio.com/products/rstudio/download/
