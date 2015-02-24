@@ -286,7 +286,7 @@ Now, let's plot it! You should be able to figure out how to do this based on the
 
 Before you go, make sure a TA sees your final plot and marks you off!
 
-If you want to save your commands, got the history panel in the top right, and hit the save button. You can also save your entire environment in the same way. You can also enter the below command:
+If you want to save your commands, go to the history panel in the top right, and hit the save button. You can also save your entire environment in the same way. You can also enter the below command:
 
 ```{r eval=FALSE}
 savehistory("history.txt")
