@@ -23,7 +23,7 @@ In upper right, there is a small icon to start a new R script:
 
 ![](screenshot1.jpg)
 
-Press this, chhose R script and a new blank window will open above the console.
+Press this, choose R script and a new blank window will open above the console.
 
 Go to blackboard, and download the file lab5script.txt - open it with a text editor and take a quick browse.
 Now, copy the entire contents and paste it into the blank window above your console.
@@ -64,7 +64,7 @@ You can change working directory by typing in:
 setwd("your/directory/structure")
 ```
 
-RStudio also has a nice point and click interface - goto session>set working directory>choose directory and a box will pop up. Once you make your selection of directory, the relevant command will be entered in the console - save this and use in your script.
+RStudio also has a nice point and click interface - go to Session>set working directory>choose directory and a box will pop up. Once you make your selection of directory, the relevant command will be entered in the console - save this and use it in your script.
 
 ## 5.3 Running an ANOVA
 
