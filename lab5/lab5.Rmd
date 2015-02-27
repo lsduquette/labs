@@ -11,7 +11,7 @@ In this lab, we will run analysis using ANOVA on your *Hordeum vulgare* data fro
 
 One of the great advantages of R is we can make this analysis reproducible, using a "script", which we can then share with other researchers, or include as a supplementary data file in a published paper.
 
-We will be modifying and using a script throughout this lab. The script contains most of the commands used already, but will need to be slightly modified based on your own setup, as well as filled in to run analyses where indicated. You will be assessed on both your script, and filling in the question sheet on portal. Your final submission should be a filled out copy of the question sheet, and a copy of your script printed and stapled together.
+We will be modifying and using a script throughout this lab. The script contains most of the commands used already, but will need to be slightly modified based on your own setup, as well as filled in to run analyses where indicated. You will be assessed on both your script, and filling in the question sheet "Lab 5 Question Sheet" found on portal. Your final submission should be a filled out copy of the question sheet, and a copy of your script printed and stapled together.
 
 
 ## 5.2 Instructions
@@ -139,7 +139,7 @@ Question 6 -  What are the overall biological conclusions for our analysis in bo
 
 Think a little bit about the data we have. We had a single hypothesis, and tested it using our data. Now, imagine you decide that you don't trust the other two lab streams (if you already didn't, good), and that they messed up their experiment. 
 
-Your new hypothesis is that the height of plants might not just vary by treatment, but by lab section, and some interaction between these. Plot the heights as a reponse of lab section, and write a function to run a two way ANOVA in your script (you can assume the data is normal). **(2 points)** 
+Your new hypothesis is that the height of plants might not just vary by treatment, but by lab section, and some interaction between these (note, for this section, use the "Treatment" variable, not water and fertiliser individually). Plot the heights as a reponse of lab section, and write a function to run a two way ANOVA in your script (you can assume the data is normal). **(2 points)** 
 
 In the question sheet, include your hypothesis, statistical hypothesis, summary table, statistical conclusion and biological conclusion. **(6 points)**
 
