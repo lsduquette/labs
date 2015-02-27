@@ -1,7 +1,7 @@
 ---
-title: "Lab 4: Intro to R"
+title: 'Lab 4: Intro to R'
 author: "Jeremy Gray"
-output: html_document
+output: pdf_document
 ---
 
 4.1 Intro
@@ -48,7 +48,6 @@ It should look a little like this:
 ![](screenshot1.jpg)
 
 Type/paste the commands into the console. If you mess up and want to redo a command, just hit the up arrow on the keyboard to go back through history.
-
 
 4.3 Basic Calculations and Operations
 ========================================================
@@ -133,7 +132,6 @@ sumtwo(a,b)
 
 Built in functions will often look like our simple example above, only more complicated based on their task. 
 
-
 4.5 Help
 ========================================================
 
@@ -156,8 +154,6 @@ try typing plo, then hitting tab:
 ![](screenshot2.jpg)
 
 You will get a list of everything you can do that starts with plo... There is a lot!
-
-
 
 4.6 Inputting Data
 ========================================================
@@ -182,7 +178,6 @@ click yes - we don't care about losing excel specific formatting
 Close excel! Now we can open our file with whatever we want. Let's try a text editor:
 
 ![](screenshot5.jpg)
-
 
 We can see it is a simple text representation of our data with commas separating the values and line breaks the rows. .csv stands for comma separated values.
 
@@ -213,7 +208,6 @@ so we printed it out, but let's assign it to a variable so we can access it:
 soildata<-read.csv("heightdata2015.csv")
 ```
 
-
 4.7 Exploratory Analysis
 ========================================================
 
@@ -226,12 +220,12 @@ soildata$Height
 mean(soildata$Height)
 str(soildata)
 ```
-
 The head and tail commands give us the first (or last) 6 rows of our data. The $ operator takes all the values from the named column, which we can then go on to mean.
 
 The str function tells us what type our data is: a dataframe, with three factors (ie categorical variables), and a numeric column (our continuous response variable). If you continue on in R you will learn what this all means, and how to change it.
 
 Recall our schema - what tests would be sensible to run on this data?
+
 ![](schema.jpg)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Lab 5: ANOVA using R"
+title: 'Lab 5: ANOVA using R'
 author: "Jeremy Gray"
 output: html_document
 ---
@@ -81,13 +81,17 @@ Recall from lectures, we have 7 steps in running an ANOVA
 
 #### Step 1 - What is our statistical hypothesis? 
 
+
 Fill out Question 1. **(0.5 points)**
 
 #### Step 2 - This is what you did in your lab
 
 #### Step 3 - We have multiple things to do here:
 
-let's read our data in first: Lines 16 and 17 in our script have this code - you need to change it for your directory. Then save your script, select it and run it **(1 point)**.
+
+let's read our data in first: 
+
+Lines 16 and 17 in our script have this code - you need to change it for your directory. Then save your script, select it and run it **(1 point)**.
 
 To test the assumptions, we would like to plot the data as a first step. We are interested in our treatments resulting in some output - put the dependant variable into the script so our graph will plot **(1 point)**.
 
@@ -101,13 +105,16 @@ Question 3. What statistical test is equivalent to these two tests? **(0.5 point
 
 #### Steps 4-5 - Run the ANOVA
 
+
 Let's run the ANOVAs - the one with water is written for you. Enter the command for the fertiliser analysis in the script **(1 point)**. R will automatically give us our p-values
 
 #### Steps 6-7 - Report results
 
+
 Enter the summary tables into the question sheet at Question 4 (you can copy paste from the console output). What can we conclude from the tests? **(2 points)**
 
 ## 5.3 Running a Two-Way/Factorial ANOVA
+
 
 We can also test for interactions between our groups (you may not have covered this in lectures yet, see https://en.wikipedia.org/wiki/Two-way_analysis_of_variance). To do this, we can tell the ANOVA we are interested in two variables. Recall our previous formula:
 
@@ -136,6 +143,7 @@ Question 5 - Paste in your summary table. What is your statistical conclusion fr
 Question 6 -  What are the overall biological conclusions for our analysis in both sections? **(2 points)**
 
 ## 5.4 Running your own analysis
+
 
 Think a little bit about the data we have. We had a single hypothesis, and tested it using our data. Now, imagine you decide that you don't trust the other two lab streams (if you already didn't, good), and that they messed up their experiment. 
 
