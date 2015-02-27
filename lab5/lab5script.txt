@@ -1,0 +1,62 @@
+#welcome to your first r script (in EEB225 at least)
+#now you have this open, paste it into the script window in RStudio
+
+#comments look like this!
+#any line that begins with a hash is not run
+
+#every script should normally start with a brief comment saying what it is meant to do
+#this script is to run an ANOVA on the height data from our barley lab. 
+#and hopefully get you points for your grade!
+
+#the next thing we have to do is say where our data is and read it in
+#you will need to modify this based on where yours is (1 point):
+
+setwd("C:/Users/jeremy/Documents/lab5/")
+soildata<-read.csv("heightdata2015.csv")
+
+#verify we loaded it ok
+head(soildata)
+
+#checking for violation of assumptions
+#plot - what is our dependent variable? enter it after the ~ below to plot your graph
+plot(soildata$Height~)
+
+#Let's check for normality
+shapiro.test(subset(soildata,water=="+")$Height)
+shapiro.test(subset(soildata,water=="-")$Height)
+shapiro.test(subset(soildata,fertiliser=="+")$Height)
+shapiro.test(subset(soildata,fertiliser=="-")$Height)
+#end of shapiro tests
+
+#bartlett tests
+bartlett.test(soildata$Height~soildata$water)
+bartlett.test(soildata$Height~soildata$fertiliser)
+#end of bartlett tests
+
+#How would I get help for these two functions?
+#type in the lines below (1 point)
+
+
+#
+
+#running a one way anova
+#to run an anova in r, we use the aov command. We use the summary function to get out the data we need
+summary(aov(soildata$Height~soildata$water))
+#enter your anova for fertiliser below (1 point)
+
+
+#
+
+#enter your two way anova code below (1 point)
+
+#
+
+
+#enter your code for your own analysis here (2 points)
+#your plot:
+
+#your anova:
+
+#
+
+
