@@ -1,7 +1,7 @@
 ---
 title: 'Lab 5: ANOVA using R'
-author: "Jeremy Gray"
-output: html_document
+author: 'EEB225: J. Gray'
+output: pdf_document
 ---
   
 ## 5.1 Intro
@@ -107,6 +107,29 @@ Question 3. What statistical test is equivalent to these two tests? **(0.5 point
 
 
 Let's run the ANOVAs - the one with water is written for you. Enter the command for the fertiliser analysis in the script **(1 point)**. R will automatically give us our p-values
+
+You will note that the script has summary() around the anova call. The summary function gives us what we need, but we can get everything else out. This is because ANOVAs in R store a ton of stuff - try just entering this:
+
+
+```{r eval=FALSE}
+aov(soildata$Height~soildata$water)
+```
+
+we get a kind of terse output. If we want to keep the ANOVA, we can simply assign it to a variable:
+
+```{r eval=FALSE}
+anova1<-aov(soildata$Height~soildata$water)
+str(anova1)
+```
+
+There are a ton of things in there - we will cover some in the upcoming lectures! - remember we can pull out individual parts of things in R using the $:
+
+```{r eval=FALSE}
+anova1$df.residual
+anova1$call
+```
+
+For now, we can ignore everything but the summary table, but remember R can give us all the information we want about our ANOVA.
 
 #### Steps 6-7 - Report results
 
