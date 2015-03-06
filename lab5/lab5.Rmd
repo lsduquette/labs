@@ -1,7 +1,7 @@
 ---
 title: 'Lab 5: ANOVA using R'
 author: 'EEB225: J. Gray'
-output: pdf_document
+output: html_document
 ---
   
 ## 5.1 Intro
@@ -183,5 +183,5 @@ If you have errors, unclosed brackets or other troubles try to work through the 
 
 ## 5.6 Submission
 
-Please print out your R script, as well as the question sheet with your answers in it. Both your script and your analysis should not exceed 4 pages total. This is due in your lab in the week of March 17/18.
+Please print out your R script, as well as the question sheet with your answers in it. Both your script and your analysis should not exceed 4 pages total. This is due in the lab in the week of March 17-18 (with an automatic 1 week extension).
 
