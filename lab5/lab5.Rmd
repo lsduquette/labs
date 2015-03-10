@@ -44,6 +44,12 @@ To run a script (or part of it) select the part you want to run, and hit the run
 
 ![](screenshot4.jpg)
 
+### Important!
+
+1. The data is different from last week. Make sure you delete (or move) last weeks data so you are working on the correct file.
+
+2. If you just run the script as written, it will not read in your data. This is because it is written for my computer. First you need to change to your working directory, as detailed below.
+
 #### Changing directory
 
 If you are running this on a home computer, or downloaded your data to a different place, you will need to know about working directories. In short, R is by default looking for files at some place on your computer. Find out where by typing:
@@ -93,7 +99,7 @@ let's read our data in first:
 
 Lines 16 and 17 in our script have this code - you need to change it for your directory. Then save your script, select it and run it **(1 point)**.
 
-To test the assumptions, we would like to plot the data as a first step. We are interested in our treatments resulting in some output - put the dependant variable into the script so our graph will plot **(1 point)**.
+To test the assumptions, we would like to plot the data as a first step. We are interested in our treatments resulting in some output - put the independant variable into the script so our graph will plot **(1 point)**.
 
 Our next test is for assumptions - Run the R commands for Shapiro and Bartlett tests. Recall a Shapiro test tests for normality of the data, and Bartlett for equal variances. How do we get help for these functions? Type it into the script **(1 point)**.
 
@@ -183,5 +189,5 @@ If you have errors, unclosed brackets or other troubles try to work through the 
 
 ## 5.6 Submission
 
-Please print out your R script, as well as the question sheet with your answers in it. Both your script and your analysis should not exceed 4 pages total. This is due in the lab in the week of March 17-18 (with an automatic 1 week extension).
+Please print out your R script, as well as the question sheet with your answers in it. Both your script and your analysis should not exceed 4 pages total. This is due in the lab in the week of March 17-18 (with an automatic 1 week extension). You can print the script from any text editor, or paste it into your question sheet. 
 

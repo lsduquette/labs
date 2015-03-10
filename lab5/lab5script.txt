@@ -18,7 +18,7 @@ soildata<-read.csv("heightdata2015.csv")
 head(soildata)
 
 #checking for violation of assumptions
-#plot - what is our dependent variable? enter it after the ~ below to plot your graph (1 point)
+#plot - what is our independent variable? enter it after the ~ below to plot your graph (1 point)
 plot(soildata$Height~)
 
 #Let's check for normality
