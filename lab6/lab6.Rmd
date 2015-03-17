@@ -154,3 +154,25 @@ ggplot(data=testdata, aes(x=X, y=Y))+geom_point()+
 ##Assignment
 
 You now need to run this analysis, but on the provided soildata.csv file. I strongly recommend using a script as in lab 5, but this is not necessary for the assignment. Please see the question sheet for detailed instructions and mark breakdowns. This is due in in the last lecture on April 2.
+
+##R labs summary
+
+So we have gone from 0 knowledge of R (for the majority of the class) to reasonably capable. Not too bad! Here's a summary of the major things I hoped you have learned from these three labs:
+
+1. What R and RStudio are, how to download and run them
+2. How to do basic math in the console
+3. how to define objects (using <-)
+4. How to use basic functions
+5. How to get help
+6. How to format data to load into R
+7. How to load data into R
+8. How to check our data is loaded in using head()
+9. How to do basic plots
+10. How to subset data
+11. How to write and use basic R scripts
+12. How to get and change our working directory
+13. How to run and interpret an ANOVA
+14. How the equation system works in R
+15. How to install and load packages
+16. The very basics of plotting with ggplot2
+17. How to run and plot a linear regression
