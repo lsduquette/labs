@@ -99,7 +99,7 @@ To export a graph, we can use the export button in RStudio and save to disk or c
 
 ![](export.jpg)
 
-You can also use the relevant command - pdf(),jpeg(),tiff(),png(), or many more 9this helps with reproducibility). Remember to turn off the device when you are done with dev.off()
+You can also use the relevant command - pdf(), jpeg(), tiff(), png(), or many more (this helps with reproducibility). Remember to turn off the device when you are done with dev.off()
 
 ```{r,eval=FALSE}
 jpeg("plot01.jpg")
@@ -122,7 +122,7 @@ $Y=\alpha + \beta * X$
 
 Where y and x are our data $\alpha$ is our intercept and $\beta$ is our slope. We want to estimate the slope and intercept, so we can understand the relationship.
 
-To do this, we can model the data in R. First, we runa correlation test:
+To do this, we can model the data in R. First, we run a correlation test:
 
 ```{r,eval=FALSE}
 cor.test(testdata$X,testdata$Y)
