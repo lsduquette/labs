@@ -14,7 +14,7 @@ Unfortunately, we don't have data that is capable of being used for linear regre
 ![](schema.jpg)
 
 
-However, I have simulated a "depth" variable for our *Hordeum vulgare* data. This represents the depth at which the seeds were initially planted. 
+However, I have simulated a "depth" variable for our *Hordeum vulgare* data. This represents the depth at which the seeds were initially planted. Both the height and depth are in cm.
 
 Again, please download the heightdata file and the testdata file from portal, as well as the question sheet.
 
@@ -29,7 +29,7 @@ Open Rstudio and load in the testdata.csv file. Read it to an object named "test
 When we have two continuous variables, the first thing to do is often to plot them against each other.
 
 ```{r,eval=FALSE}
-plot(testdata$X~testdata$Y)
+plot(testdata$Y~testdata$X)
 ```
 
 R will give us a reasonable looking plot, with default axis labels. This is ok for now, but what if we want to present our graph more formally?
@@ -62,6 +62,8 @@ Next, we need to tell R we want to load it, **this needs to be run every time R 
 ```{r, eval=FALSE}
 library(ggplot2)
 ```
+
+You can think of installing a package like installing a computer program - you need to install it once, but don't always want it running. The library command is the equivalent of starting the program. You don't always want every program on your computer running, similarly you only want packages running when you need them. Thus only call library(package) when you need it.
 
 ggplot is based on a "grammar of graphics" - for more details, see http://docs.ggplot2.org/current/
 
@@ -109,7 +111,7 @@ dev.off()
 ```
 
 
-You should have just made a .jpg in your working directory (with bad resolution, try ?jpeg to make it nicer).
+You should have just made a .jpg in your working directory (with bad resolution, try ?jpeg to make it nicer). If you do not run dev.off(), you will not get any more plots made - R is writing them to file. In this case, run dev.off() until you get the output "null device 1".
 
 
 ## 6.4 Linear Regression
@@ -125,7 +127,7 @@ Where y and x are our data $\alpha$ is our intercept and $\beta$ is our slope. W
 To do this, we can model the data in R. First, we run a correlation test:
 
 ```{r,eval=FALSE}
-cor.test(testdata$X,testdata$Y)
+cor.test(testdata$Y,testdata$X)
 ```
 
 
@@ -134,13 +136,15 @@ Linear models rely on the data being normally distributed - how can we test this
 If our data are not normal, we can use the Spearman Rank correlation -
 
 ```{r,eval=FALSE}
-cor.test(testdata$X,testdata$Y,method="spearman")
+cor.test(testdata$Y,testdata$X,method="spearman")
 ```
+
+This will give you a warning, please ignore it. It is related to the math behind calculating a p-value with ties - so far, the largest published is only useful for n<100. Recall how we calculated C for our Kruskal Wallis test in the case of ties.
 
 Now we can run a linear regression:
 
 ```{r eval=FALSE}
-model1<-lm(testdata$X~testdata$Y)
+model1<-lm(testdata$Y~testdata$X)
 summary(model1)
 ```
 
