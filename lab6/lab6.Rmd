@@ -139,7 +139,7 @@ If our data are not normal, we can use the Spearman Rank correlation -
 cor.test(testdata$Y,testdata$X,method="spearman")
 ```
 
-This will give you a warning, please ignore it. It is related to the math behind calculating a p-value with ties - so far, the largest published is only useful for n<100. Recall how we calculated C for our Kruskal Wallis test in the case of ties.
+This will give you a warning when you run it on the soildata. It is related to the math behind calculating a p-value with ties - so far, the largest published is only useful for n<100. Recall how we calculated C for our Kruskal Wallis test in the case of ties. The spearman correction is much much harder.
 
 Now we can run a linear regression:
 
