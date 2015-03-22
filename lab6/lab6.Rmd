@@ -14,7 +14,7 @@ Unfortunately, we don't have data that is capable of being used for linear regre
 ![](schema.jpg)
 
 
-However, I have simulated a "depth" variable for our *Hordeum vulgare* data. This represents the depth at which the seeds were initially planted. Both the height and depth are in cm.
+However, I have simulated a "depth" variable for our *Hordeum vulgare* data. This represents the depth at which the seeds were initially planted. Both the height and depth are in cm. In this lab, please imagine we planted the seeds at varying depths (independent variable).
 
 Again, please download the heightdata file and the testdata file from portal, as well as the question sheet.
 
