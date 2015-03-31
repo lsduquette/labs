@@ -8,14 +8,18 @@ EEB225 labs
 These labs were developed by Jeremy Gray for the course EEB225H1S -
 Biostatistics for Biological Sciences at the University of Toronto for the
 Winter term 2015.
+
 They are targeted at students who have not seen R before and are headed into
 an ecology major - so need to be conversant with basic R functions.
+
 The labs follow a small lab experiment, where students planted Barley with and
 without water and fertiliser, and put the data into excel with plots and T-tests.
 The analyses carried out are on real data.
 
 Lab4 introduces R, help, reading in data, subsetting and plotting.
+
 Lab5 introduces Scripts, changing working directory and ANOVA.
+
 lab6 introduces packages, ggplot2 and linear regression.
 
 After working through the labs, students should know:
