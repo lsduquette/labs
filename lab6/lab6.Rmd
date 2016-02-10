@@ -1,10 +1,10 @@
 ---
-title: 'Lab 6: Linear Regression using R'
+title: 'Lab 8: Linear Regression using R'
 author: 'EEB225: J. Gray'
 output: pdf_document
 ---
   
-## 6.1 Intro
+## 8.1 Intro
 
   
 In this lab, we have two main objectives. The first is to learn linear regression and how to run it in R. The second is to learn how to install and load packages in R, as well as output images.
@@ -19,12 +19,12 @@ However, I have simulated a "depth" variable for our *Hordeum vulgare* data. Thi
 Again, please download the heightdata file and the testdata file from portal, as well as the question sheet.
 
 
-## 6.2 Instructions
+## 8.2 Instructions
 
 Open Rstudio and load in the testdata.csv file. Read it to an object named "testdata". this file is not the height data, it is simulated data to give you an idea of what to run. The real data is to be analysed for your report.
 
 
-## 6.3 Advanced Plotting
+## 8.3 Advanced Plotting
 
 When we have two continuous variables, the first thing to do is often to plot them against each other.
 
@@ -114,7 +114,7 @@ dev.off()
 You should have just made a .jpg in your working directory (with bad resolution, try ?jpeg to make it nicer). If you do not run dev.off(), you will not get any more plots made - R is writing them to file. In this case, run dev.off() until you get the output "null device 1".
 
 
-## 6.4 Linear Regression
+## 8.4 Linear Regression
 
 Linear regression is a way to quantify the dependence of one continuous variable on another (see https://en.wikipedia.org/wiki/Linear_regression if you haven't met these in lectures yet). We want to see what happens to a variable as we increase or decrease another variable - the Covariance.
 
@@ -157,7 +157,7 @@ ggplot(data=testdata, aes(x=X, y=Y))+geom_point()+
 
 ##Assignment
 
-You now need to run this analysis, but on the provided soildata.csv file. I strongly recommend using a script as in lab 5, but this is not necessary for the assignment. Please see the question sheet for detailed instructions and mark breakdowns. This is due in in the last lecture on April 2.
+You now need to run this analysis, but on the provided soildata.csv file. I strongly recommend using a script as in lab 5, but this is not necessary for the assignment. Please see the question sheet for detailed instructions and mark breakdowns. This is due in the last lab April 5-6.
 
 ##R labs summary
 
