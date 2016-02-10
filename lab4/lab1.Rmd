@@ -1,10 +1,10 @@
 ---
-title: 'Lab 4: Intro to R'
+title: 'Lab 5: Intro to R'
 author: "Jeremy Gray"
 output: pdf_document
 ---
 
-4.1 Intro
+5.1 Intro
 ========================================================
 
 Welcome to the first R lab!
@@ -26,7 +26,7 @@ We are going to use RStudio - a nicer UI to R (technically an IDE). This is also
 This document was written in knitr - a way of making a shareable, repeatable document with embedded code. This is a markdown language (some of you may be familiar with Latex)
 
 
-4.2 Instructions
+5.2 Instructions
 ========================================================
 
 Normal instructions, etc are written in the below type face. You should type these into the command prompt
@@ -49,7 +49,7 @@ It should look a little like this:
 
 Type/paste the commands into the console. If you mess up and want to redo a command, just hit the up arrow on the keyboard to go back through history.
 
-4.3 Basic Calculations and Operations
+5.3 Basic Calculations and Operations
 ========================================================
 
 First, let's do a little math
@@ -95,7 +95,7 @@ z
 
 z is a dataframe - how we will store data. We can imagine a dataframe in R as a large spreadsheet, with each observation on a row, and each variable type as a column. Data frames are one of Rs best features - but there are many other ways of representing data as well.
 
-4.4 R as a functional language
+5.4 R as a functional language
 ========================================================
 
 R depends heavily on functions. We use functions to give us interesting outputs based on our inputs.
@@ -132,7 +132,7 @@ sumtwo(a,b)
 
 Built in functions will often look like our simple example above, only more complicated based on their task. 
 
-4.5 Help
+5.5 Help
 ========================================================
 
 There are a lot of functions included in R. If you don't know how to use one, type in ?function
@@ -155,13 +155,13 @@ try typing plo, then hitting tab:
 
 You will get a list of everything you can do that starts with plo... There is a lot!
 
-4.6 Inputting Data
+5.6 Inputting Data
 ========================================================
 
 Now that we know (a little) about functions and variables, let's read our data in!
 First, let's download our data from blackboard.
 
-It is called "height data2015.xlsx" in the lab assignments folder.
+It is called "height data2016.xlsx" in the lab assignments folder.
 
 Download it to your downloads folder, and open it up in excel:
 
@@ -199,7 +199,7 @@ dir()
 ```
 
 ```{r eval=FALSE}
-read.csv("heightdata2015.csv")
+read.csv("heightdata2016.csv")
 ```
 
 so we printed it out, but let's assign it to a variable so we can access it:
@@ -208,7 +208,7 @@ so we printed it out, but let's assign it to a variable so we can access it:
 soildata<-read.csv("heightdata2015.csv")
 ```
 
-4.7 Exploratory Analysis
+5.7 Exploratory Analysis
 ========================================================
 
 What can we do now? Let's see what the data looks like (aka exploratory analysis)
@@ -229,7 +229,7 @@ Recall our schema - what tests would be sensible to run on this data?
 ![](schema.jpg)
 
 
-4.8 Subsetting Data
+5.8 Subsetting Data
 ========================================================
 
 We can subset our data. The $ sign gives us a column. We can filter, by using a function with the  == operator or bracket subsetting
@@ -253,7 +253,7 @@ subset(soildata,Height>10.0)
 
 Try pulling our your groups data! (hint: groups are stored in the soildata$group column and need to be surrounded by "")
 
-4.9 Plotting Data
+5.9 Plotting Data
 ========================================================
 
 We can plot our data. R has some very nice built in graphing capabilities:
@@ -266,7 +266,7 @@ plot(soildata$Height~soildata$section)
 
 The nomenclature here tells R we are plotting soildata$Height as a response (~) of the soildata$Treatment, soildata$group or soildata$section. 
 
-4.10 Assessment
+5.10 Assessment
 ========================================================
 
 The last thing you need to do is plot your own data as a response of treatments.
